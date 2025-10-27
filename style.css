@@ -1,0 +1,766 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background-color: #1e3a8a;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ffdd57;
+}
+
+nav a.active {
+  border-bottom: 2px solid #ffdd57;
+  padding-bottom: 2px;
+}
+
+/* Search Bar */
+.search-bar {
+  padding: 20px;
+  text-align: center;
+}
+
+#searchInput {
+  width: 80%;
+  max-width: 500px;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+#searchInput:focus {
+  border-color: #1e3a8a;
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  padding: 15px;
+  margin: 20px auto;
+  border-radius: 10px;
+  max-width: 900px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.filter-bar input,
+.filter-bar select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.filter-bar input {
+  flex: 1 1 250px;
+}
+
+.filter-bar select {
+  flex: 1 1 150px;
+}
+
+.filter-bar input:focus,
+.filter-bar select:focus {
+  border-color: #1e3a8a;
+}
+
+.filter-bar select {
+  flex: 1 1 150px;
+  min-width: 150px;
+}
+
+/* Job List */
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Job Card */
+.job-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.job-card h3 {
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.job-card p {
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.job-card .company {
+  font-weight: 600;
+  color: #111;
+}
+
+/* Action Buttons */
+.job-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.job-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.job-actions button:hover {
+  transform: translateY(-2px);
+}
+
+.job-actions button:nth-child(1) {
+  background-color: #2563eb; /* Blue for edit */
+  color: #fff;
+}
+
+.job-actions button:nth-child(1):hover {
+  background-color: #1e40af;
+}
+
+.job-actions button:nth-child(2) {
+  background-color: #dc2626; /* Red for delete */
+  color: #fff;
+}
+
+.job-actions button:nth-child(2):hover {
+  background-color: #991b1b;
+}
+
+/* Form Section (for add-job.html) */
+.form-section {
+  max-width: 600px;
+  background: #fff;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.form-section h2 {
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 500;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: #1e3a8a;
+}
+
+form button {
+  display: block;
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #1e3a8a;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background-color: #153e75;
+}
+
+/* Footer */
+footer {
+  background-color: #1e3a8a;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  nav a {
+    margin-left: 10px;
+  }
+
+  #searchInput {
+    width: 95%;
+  }
+
+  .job-card {
+    padding: 15px;
+  }
+
+  form {
+    padding: 20px;
+  }
+}
+
+
+/* Category Tag */
+.category-tag {
+  background-color: #2563eb;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Apply Button */
+.job-actions button:nth-child(3) {
+  background-color: #16a34a; /* Green */
+  color: #fff;
+}
+
+.job-actions button:nth-child(3):hover {
+  background-color: #15803d;
+}
+
+/* Fade-in animation for job cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.job-card {
+  animation: fadeInUp 0.4s ease-in-out;
+}
+
+/* Sort Bar */
+.sort-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 900px;
+  margin: 10px auto;
+  padding: 10px 20px;
+}
+
+.sort-bar label {
+  font-weight: 600;
+  margin-right: 8px;
+  color: #333;
+}
+
+.sort-bar select {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+.sort-bar select:focus {
+  border-color: #1e3a8a;
+}
+
+/* Modal (Job Details) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 5% auto;
+  padding: 25px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 1.5rem;
+  color: #333;
+  cursor: pointer;
+}
+
+
+/* Apply Form */
+.apply-form {
+  margin-top: 20px;
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.apply-form h3 {
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.apply-form label {
+  display: block;
+  margin-top: 8px;
+}
+
+.apply-form input,
+.apply-form textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.apply-form button {
+  background-color: #1e3a8a;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.apply-form button:hover {
+  background-color: #153e75;
+}
+
+/* --- Job Card Buttons --- */
+.job-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.job-actions button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.details-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.details-btn:hover {
+  background-color: #0066d4;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #b02a37;
+}
+
+/* --- Job Details Page --- */
+.job-details {
+  max-width: 700px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.job-details h2 {
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+.job-details p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.full-desc {
+  margin-top: 15px;
+  color: #333;
+}
+
+/* ============================
+   JOB DETAILS PAGE & MODAL
+============================ */
+
+/* Job Details Layout */
+.job-details {
+  max-width: 700px;
+  margin: 3rem auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.job-details h2 {
+  color: #0b5394;
+  margin-bottom: 0.5rem;
+}
+
+.job-details p {
+  line-height: 1.6;
+  margin: 0.5rem 0;
+}
+
+.job-details strong {
+  color: #333;
+}
+
+/* Apply Now Button */
+.apply-btn {
+  display: inline-block;
+  background-color: #0b5394;
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.apply-btn:hover {
+  background-color: #063970;
+}
+
+/* ============================
+   MODAL DESIGN
+============================ */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content h3 {
+  color: #0b5394;
+  margin-bottom: 1rem;
+}
+
+.modal-content label {
+  display: block;
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.modal-content button {
+  background-color: #0b5394;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.modal-content button:hover {
+  background-color: #063970;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #333;
+  transition: 0.2s;
+}
+
+.close-btn:hover {
+  color: #0b5394;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.apply-section {
+  max-width: 600px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.apply-section h2 {
+  color: #1e3a8a;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.apply-section label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.apply-section input,
+.apply-section textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.apply-section button {
+  background-color: #1e3a8a;
+  color: #fff;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.apply-section button:hover {
+  background-color: #153e75;
+}
+
+.applications-section {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.applications-section h2 {
+  text-align: center;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+.application-card {
+  background: #f9fafb;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.application-card h3 {
+  margin-bottom: 8px;
+  color: #1e3a8a;
+}
+
+.application-card button {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.application-card button:hover {
+  background-color: #991b1b;
+}
+
+.job-actions {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.details-btn,
+.edit-btn,
+.delete-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.details-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.details-btn:hover {
+  background-color: #0069d9;
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: black;
+}
+
+.edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+/* === Job Action Buttons (Back) === */
+.job-actions {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.back-btn {
+  display: inline-block;
+  background-color: #d63e18;
+  color: #fff;
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-top: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background-color: #d63e18;
+}
+

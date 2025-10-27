@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>T.M YouthEmpowerment | Job Listings</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>YouthEmpowerment</h1>
+    <nav>
+      <a href="index.html" class="active">Jobs</a>
+      <a href="add-job.html">Post a Job</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Search & Filter Bar -->
+    <section class="filter-bar">
+      <input type="text" id="searchInput" placeholder="Search by job title or company...">
+
+      <select id="categoryFilter">
+        <option value="">All Categories</option>
+        <option value="IT">IT</option>
+        <option value="Retail">Retail</option>
+        <option value="Education">Education</option>
+        <option value="Finance">Finance</option>
+        <option value="Healthcare">Healthcare</option>
+      </select>
+
+      <select id="locationFilter">
+        <option value="">All Locations</option>
+        <option value="Johannesburg">Johannesburg</option>
+        <option value="Cape Town">Cape Town</option>
+        <option value="Durban">Durban</option>
+        <option value="Pretoria">Pretoria</option>
+        <option value="Polokwane">Polokwane</option>
+      </select>
+
+      <select id="typeFilter">
+        <option value="">All Types</option>
+        <option value="Full-time">Full-time</option>
+        <option value="Part-time">Part-time</option>
+        <option value="Remote">Remote</option>
+        <option value="Contract">Contract</option>
+      </select>
+    </section>
+
+    <!-- Sort by -->
+    <div class="sort-bar">
+      <label for="sortFilter">Sort by:</label>
+      <select id="sortFilter">
+        <option value="newest">Newest</option>
+        <option value="oldest">Oldest</option>
+      </select>
+    </div>
+
+    <section class="job-list" id="jobList">
+      <!-- Jobs will appear here dynamically from localStorage -->
+    </section>
+  </main>
+
+  <hr />
+  <footer>
+    <p>YouthEmpowerment connects young talent with local opportunities, promoting growth, skills, and inclusion.</p>
+    <p>© 2025 YouthEmpowerment | Empowering Local Jobs</p>
+  </footer>
+
+  <!-- script -->
+  <script src="script.js"></script>
+
+  <!-- Job Details Modal -->
+  <div id="jobModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p><strong>Company:</strong> <span id="modalCompany"></span></p>
+      <p><strong>Location:</strong> <span id="modalLocation"></span></p>
+      <p><strong>Type:</strong> <span id="modalType"></span></p>
+      <p><strong>Description:</strong></p>
+      <p id="modalDescription"></p>
+      <p><em id="modalPostedDate"></em></p>
+
+      <!-- Apply + Back Buttons -->
+      <div class="job-actions">
+        <button id="applyBtn" class="apply-btn">Apply Now</button>
+        <button class="back-btn" onclick="window.location.href='index.html'">Back to Listings</button>
+      </div>
+
+      <!-- Apply Form -->
+      <form id="applyForm" class="apply-form" style="display:none;">
+        <h3>Apply for this job</h3>
+        <label for="applicantName">Your Name</label>
+        <input type="text" id="applicantName" required>
+
+        <label for="applicantEmail">Email</label>
+        <input type="email" id="applicantEmail" required>
+
+        <label for="applicantMessage">Message</label>
+        <textarea id="applicantMessage" rows="4" placeholder="Write a short message..."></textarea>
+
+        <button type="submit">Submit Application</button>
+        <p id="applySuccess" style="color:green; display:none; margin-top:10px;">
+          ✅ Application submitted successfully!
+        </p>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

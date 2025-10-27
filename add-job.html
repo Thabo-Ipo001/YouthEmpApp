@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YouthEmpowerment | Post a Job</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>YouthEmpowerment</h1>
+    <nav>
+      <a href="index.html">Jobs</a>
+      <a href="add-job.html" class="active">Post a Job</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-section">
+  <h2>Post a New Job</h2>
+  <form id="jobForm">
+    <label for="title">Job Title</label>
+    <input type="text" id="title" required>
+
+    <label for="company">Company Name</label>
+    <input type="text" id="company" required>
+
+    <label for="location">Location</label>
+    <input type="text" id="location">
+
+    <label for="category">Category</label>
+    <input type="text" id="category" placeholder="e.g., IT, Retail, Education">
+
+    <label for="description">Job Description</label>
+    <textarea id="description" rows="5" required></textarea>
+
+     <label for="jobType">Job Type</label>
+    <select id="jobType" required>
+        <option value="">Select Type</option>
+        <option value="Full-time">Full-time</option>
+        <option value="Part-time">Part-time</option>
+        <option value="Remote">Remote</option>
+        <option value="Contract">Contract</option>
+    </select>
+
+    <button type="submit">Add Job</button>
+  </form>
+  <p id="successMsg" style="color:green; display:none;">
+    Job added successfully! <a href="index.html">Go to job listings</a>
+  </p>
+  </main>
+
+  <footer>
+    <p>© 2025 YouthEmpowerment | Empowering Local Jobs</p>
+  </footer>
+
+  <!--script -->
+  <script src="script.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const editIndex = localStorage.getItem('editIndex');
+  const jobs = JSON.parse(localStorage.getItem('jobs')) || [];
+  const jobForm = document.getElementById('jobForm');
+  const successMsg = document.getElementById('successMsg');
+
+  // Check if we are editing an existing job
+  if (editIndex !== null && jobs[editIndex]) {
+    const job = jobs[editIndex];
+
+    // Prefill fields with job data
+    document.getElementById('title').value = job.title || '';
+    document.getElementById('company').value = job.company || '';
+    document.getElementById('location').value = job.location || '';
+    document.getElementById('description').value = job.description || '';
+    if (document.getElementById('type')) document.getElementById('type').value = job.type || '';
+    if (document.getElementById('category')) document.getElementById('category').value = job.category || '';
+
+    // Update submit button text
+    const submitBtn = jobForm.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.textContent = 'Update Job';
+
+    // Modify form submit behavior for updating
+    jobForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const updatedJob = {
+        ...job,
+        title: document.getElementById('title').value.trim(),
+        company: document.getElementById('company').value.trim(),
+        location: document.getElementById('location').value.trim(),
+        description: document.getElementById('description').value.trim(),
+        type: document.getElementById('type')?.value.trim() || '',
+        category: document.getElementById('category')?.value.trim() || '',
+        datePosted: new Date().toISOString(),
+      };
+
+      // Replace old job and save
+      jobs[editIndex] = updatedJob;
+      localStorage.setItem('jobs', JSON.stringify(jobs));
+      localStorage.removeItem('editIndex');
+
+      alert('✅ Job updated successfully!');
+      window.location.href = 'index.html';
+    });
+  }
+});
+</script>
+
+</body>
+</html>

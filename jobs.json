@@ -1,0 +1,136 @@
+[
+    {
+        "Job Title": "Junior Software Developer",
+        "Company Name": "ABC Solutions",
+        "Location": "Johannesburg ",
+        "Category": "IT",
+        "Job Description": " ",
+        "Job Type": "Full time "
+    },
+
+    {
+        "Job Title": "Entry-Level Developer",
+        "Company Name": "Cronus",
+        "Location": "Johannesburg ",
+        "Category": "IT",
+        "Job Description": " ",
+        "Job Type": "Full time "
+    },
+
+    {
+        "Job Title": "Graduate Developer",
+        "Company Name": "BG Solutions",
+        "Location": "Johannesburg ",
+        "Category": "IT",
+        "Job Description": " ",
+        "Job Type": "Full time "
+    },
+
+    {
+        "Job Title": "Sales Assistants ",
+        "Company Name": "CNA Waterfall Mall ",
+        "Location": "Cape Town ",
+        "Category": "Retail ",
+        "Job Description": " ",
+        "Job Type": "Part-time "
+    },
+
+    {
+        "Job Title": "Cashiers ",
+        "Company Name": "Shoprite ",
+        "Location": "Cape Town ",
+        "Category": "Retail ",
+        "Job Description": " ",
+        "Job Type": "Part-time "
+    },
+
+    {
+        "Job Title": "Store Associates ",
+        "Company Name": "James Super Store ",
+        "Location": "Cape Town ",
+        "Category": "Retail ",
+        "Job Description": " ",
+        "Job Type": "Part-time "
+    },
+
+    {
+        "Job Title": "Teaching Assistants ",
+        "Company Name": "Durban Secondary School",
+        "Location": "Durban ",
+        "Category": "Education ",
+        "Job Description": " ",
+        "Job Type": "Contract "
+    },
+
+    {
+        "Job Title": "Tutors ",
+        "Company Name": "Durban College ",
+        "Location": "Durban ",
+        "Category": "Education ",
+        "Job Description": " ",
+        "Job Type": "Contract "
+    },
+
+    {
+        "Job Title": "Admin Staff ",
+        "Company Name": "Umlazi Primary School ",
+        "Location": "Durban ",
+        "Category": "Education ",
+        "Job Description": " ",
+        "Job Type": "Contract "
+    },
+
+    {
+        "Job Title": "Accounts ",
+        "Company Name": "KPDG ",
+        "Location": "Pretoria ",
+        "Category": "Finance ",
+        "Job Description": " ",
+        "Job Type": "Remote "
+    },
+
+    {
+        "Job Title": "Banking ",
+        "Company Name": "FNB ",
+        "Location": "Pretoria ",
+        "Category": "Finance ",
+        "Job Description": " ",
+        "Job Type": "Remote "
+    },
+
+    {
+        "Job Title": "Admin ",
+        "Company Name": "TNT Collaboration ",
+        "Location": "Pretoria ",
+        "Category": "Finance ",
+        "Job Description": " ",
+        "Job Type": "Remote "
+    },
+
+    {
+        "Job Title": "Junior Healthcare Assistant ",
+        "Company Name": "PLK Clinic ",
+        "Location": "Polokwane ",
+        "Category": "Healthcare ",
+        "Job Description": " ",
+        "Job Type": "Contract "
+    },
+
+    {
+        "Job Title": "Admin Clerk ",
+        "Company Name": "PLK Clinic ",
+        "Location": "Polokwane ",
+        "Category": "Healthcare ",
+        "Job Description": " ",
+        "Job Type": "Part-time "
+    },
+
+    {
+        "Job Title": "Support Worker ",
+        "Company Name": "Lenmed Hospital ",
+        "Location": "Johannesburg ",
+        "Category": "Healthcare ",
+        "Job Description": " ",
+        "Job Type": "Part-time "
+    }
+]

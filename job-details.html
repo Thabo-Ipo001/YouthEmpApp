@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Details | YouthEmpowerment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>YouthEmpowerment</h1>
+    <nav>
+      <a href="index.html">Jobs</a>
+      <a href="add-job.html">Post a Job</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="jobDetails" class="job-details">
+      <!-- Job details will load here -->
+    </section>
+
+    <section class="apply-section">
+  <h2>Apply for this Job</h2>
+  <form id="applyForm">
+        <label for="applicantName">Full Name</label>
+        <input type="text" id="applicantName" required>
+
+        <label for="applicantEmail">Email Address</label>
+        <input type="email" id="applicantEmail" required>
+
+        <label for="applicantMessage">Message (Optional)</label>
+        <textarea id="applicantMessage" rows="4" placeholder="Write a short message..."></textarea>
+
+        <button type="submit">Submit Application</button>
+    </form>
+
+    <p id="applySuccessMsg" style="display:none; color:green; margin-top:10px;">
+    ✅ Application submitted successfully!
+    </p>
+    </section>
+
+
+    <!-- Job Application Modal-->
+    <div id="applyModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <h3>Apply for this Job</h3>
+        <form id="applyForm">
+          <label for="applicantName">Full Name</label>
+          <input type="text" id="applicantName" required>
+
+          <label for="applicantEmail">Email</label>
+          <input type="email" id="applicantEmail" required>
+
+          <label for="applicantMessage">Message</label>
+          <textarea id="applicantMessage" rows="4" placeholder="Write a short message..." required></textarea>
+
+          <button type="submit">Submit Application</button>
+        </form>
+        <p id="applySuccess" style="display:none; color:green; margin-top:10px;">
+          ✅ Your application has been submitted successfully!
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 YouthEmpowerment | Empowering Local Jobs</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Load job details on page load
+    loadJobDetails();
+  </script>
+</body>
+</html>
